@@ -16,6 +16,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the docker image for variant ${{ matrix.variant }}
       env:
-        VERSION_ID: 3.1.0
+        VERSION_ID: 3.13.0
         VARIANT: ${{ matrix.variant }}
       run: docker build --build-arg VERSION_ID --build-arg VARIANT . -f ./$VARIANT/Dockerfile -t raonigabriel/alpine-iso:$VARIANT-$VERSION_ID
