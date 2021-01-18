@@ -9,7 +9,8 @@ jobs:
   build:
     strategy:
       matrix:
-        variant: [standard, extended]
+        variant: [standard, extended, virt, xen]
+
     runs-on: ubuntu-latest
 
     steps:
@@ -19,3 +20,5 @@ jobs:
         VERSION_ID: 3.13.0
         VARIANT: ${{ matrix.variant }}
       run: docker build --build-arg VERSION_ID --build-arg VARIANT . -f ./$VARIANT/Dockerfile -t raonigabriel/alpine-iso:$VARIANT-$VERSION_ID
+    - name: Login to DockerHub Registry
+      run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
