@@ -1,0 +1,21 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+
+  build:
+    strategy:
+      matrix:
+        variant: [standard, extended, virtual, xen, all]
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the docker image for variant ${{ matrix.variant }}
+      env:
+        VERSION_ID: 3.1.0
+        VARIANT: ${{ matrix.variant }}
+      run: docker build . --file ./$VARIANT/Dockerfile --tag raonigabriel/alpine-iso::$VARIANT-$VERSION_ID
