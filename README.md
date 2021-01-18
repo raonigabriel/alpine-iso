@@ -4,11 +4,11 @@ A set of Alpine Docker images... containing their respective Alpine ISO
 DockerHub: https://hub.docker.com/repository/docker/raonigabriel/alpine-iso
 
 The ideas behind this GitHub repository are:
-1. Use the GitHub Actions [Build Matrix](https://proandroiddev.com/how-to-github-actions-build-matrix-e6a1433a8ff5) combined with sub-folders to have **modules** within the repo. 
+1. Use the GitHub Actions [Build Matrix](https://proandroiddev.com/how-to-github-actions-build-matrix-e6a1433a8ff5) combined with sub-folders to have **sub-modules** within the repo. 
 2. Use the GitHub Actions [Manual Triggers](https://github.blog/changelog/2020-07-06-github-actions-manual-triggers-with-workflow_dispatch/) with inputs (params).
 3. Use [symlinks](https://mokacoding.com/blog/symliks-in-git/) within the repo (**./virt**/Dockerfile, **./extended**/Dockerfile and **./xen**/Dockerfile are symlinks to **./standard**/Dockerfile).
-4. How to use and **ARG** before the **FROM** [instruction](https://blog.bitsrc.io/how-to-pass-environment-info-during-docker-builds-1f7c5566dd0e).
-5. Introduce the **/etc/os-release** file (found on the base Alpine image) so that we can take advandage of it by using the [source](https://linuxize.com/post/bash-source-command/).
+4. How to use an **ARG** before the **FROM** [instruction](https://blog.bitsrc.io/how-to-pass-environment-info-during-docker-builds-1f7c5566dd0e).
+5. Introduce the **/etc/os-release** file (found on the base Alpine image) so that we can take advandage of it by using the [source](https://linuxize.com/post/bash-source-command/) command.
 6. Demonstrate that we can use Docker images for the sole purpose of storing **big ISO** files. 😬
 
 ## Features
