@@ -27,3 +27,9 @@ jobs:
       run: docker build --build-arg VERSION_ID --build-arg VARIANT . -f ./$VARIANT/Dockerfile -t $IMAGE:$VARIANT-$VERSION_ID
     - name: Login to DockerHub Registry
       run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+    - name: Push the docker image for variant ${{ matrix.variant }}
+      env:
+        VERSION_ID: ${{ github.event.inputs.alpineVersion }}
+        VARIANT: ${{ matrix.variant }}
+        IMAGE: ${{ github.repository }}
+      run: docker push $IMAGE:$VARIANT-$VERSION_ID
