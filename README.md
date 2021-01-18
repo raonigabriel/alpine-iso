@@ -12,7 +12,7 @@ The ideas behind this GitHub repository are:
 6. Demonstrate that we can use Docker images for the sole purpose of storing **big ISO** files. 😬
 
 ## Features
-Each image variant is build from the respective Docker image and contains its corresponding ISO image on **/**.  
+Each image variant is build from the respective Docker image and contains its corresponding ISO image on **/usr/share/misc**.  
 The **all** variant contains all the 4 ISO files.
 
 ## Tags (based on [x64 Alpine ISOs](https://www.alpinelinux.org/downloads/) available for download)
@@ -28,6 +28,6 @@ Where x.y.z above is a valid Alpine release version, eg. 3.13.0
 
 ```sh
 # docker run --rm -it raonigabriel/alpine-iso:standard-3.13.0
-# ls -la *.iso
+# ls -la /usr/share/misc
 # -rw-r--r--    1 root     root     139460608 Jan 18 19:41 alpine-standard-3.13.0-x86_64.iso
 ```
