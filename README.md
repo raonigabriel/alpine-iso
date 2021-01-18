@@ -12,14 +12,15 @@ The ideas behind this GitHub repository are:
 6. Demonstrate that we can use Docker images for the sole purpose of storing **big ISO** files. 😬
 
 ## Features
-Each image variant is build from the respective Docker image and also has its corresponding ISO image on **/**.
+Each image variant is build from the respective Docker image and contains its corresponding ISO image on **/**.  
+The **all** variant contains all the 4 ISO files.
 
 ## Tags (based on [x64 Alpine ISOs](https://www.alpinelinux.org/downloads/) available for download)
-raonigabriel/alpine-iso:standard-x.y.z
-raonigabriel/alpine-iso:extended-x.y.z
-raonigabriel/alpine-iso:virt-x.y.z
-raonigabriel/alpine-iso:xen-x.y.z
-raonigabriel/alpine-iso:all-x.y.z
+* raonigabriel/alpine-iso:standard-x.y.z
+* raonigabriel/alpine-iso:extended-x.y.z
+* raonigabriel/alpine-iso:virt-x.y.z
+* raonigabriel/alpine-iso:xen-x.y.z
+* raonigabriel/alpine-iso:all-x.y.z
 
 Where x.y.z above is a valid Alpine release version, eg. 3.13.0
 
